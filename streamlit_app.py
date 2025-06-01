@@ -129,7 +129,7 @@ for msg in st.session_state.messages:
 # --------------------------------------------
 # 7. ユーザー入力フォーム
 # --------------------------------------------
-if prompt := st.chat_input("調査したい技術領域やキーワードを入力してください…"):
+if prompt := st.chat_input("調査したい技術領域・対象期間・出願国・キーワードを入力してください…"):
 
     # 7-1. ユーザー発言をセッションに追加・表示
     st.session_state.messages.append({"role": "user", "content": prompt})
