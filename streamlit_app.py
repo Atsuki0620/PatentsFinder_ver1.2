@@ -3,7 +3,7 @@
 # --------------------------------------------
 import streamlit as st
 from langchain_openai import ChatOpenAI
-from langchain.schema import HumanMessage, AIMessage
+from langchain.schema import HumanMessage, AIMessage, SystemMessage
 
 # --------------------------------------------
 # 2. ページ設定・タイトル・説明
