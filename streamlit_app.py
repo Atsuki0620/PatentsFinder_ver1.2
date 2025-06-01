@@ -81,7 +81,7 @@ if prompt := st.chat_input("調査したい技術領域やキーワードを入�
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    # 7-2. LangChain 用にメッセージを HumanMessage/AIMessage に変換
+     # 7-2. LangChain 用にメッセージを HumanMessage/AIMessage/SystemMessage に変換
     lc_messages = []
     for m in st.session_state.messages:
         if m["role"] == "user":
@@ -89,10 +89,7 @@ if prompt := st.chat_input("調査したい技術領域やキーワードを入�
         elif m["role"] == "assistant":
             lc_messages.append(AIMessage(content=m["content"]))
         elif m["role"] == "system":
-            # System メッセージは LangChain 呼び出し時の先頭にそのまま入れる
-            # ChatOpenAI の呼び出しに system メッセージを渡す方法はモデルによって異なるが、
-            # 以下では「model(lc_messages)」でまとめて渡せる形を想定
-            lc_messages.append(m)  # ※ LangChain の内部で system を許容する場合はそのまま渡す
+            lc_messages.append(SystemMessage(content=m["content"]))
 
     # 7-3. LLM に問い合わせ（IPC コードを絞り込む役割のまま応答）
     # ※ LangChain v0.1 系では system メッセージを自動検出しない場合があるため、
