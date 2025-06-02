@@ -150,11 +150,16 @@ if st.button("関連技術提案"):
     else:
         st.warning("まずは入力欄に技術領域やキーワードを入力してください。")
 
-if st.button("IPCコード生成"):
-    if user_input:
-        generate_ipc_codes(user_input)
-    else:
-        st.warning("まずは入力欄に技術領域やキーワードを入力してください。")
+
+# ページを9:1の比率で2つの列に分割
+col1, col2 = st.columns([9, 1])
+with col1:user_input = st.text_input("IPCコードを生成したい技術内容を入力してください…")
+with col2:if st.button("IPCコード生成"):
+        if user_input:
+            generate_ipc_codes(user_input)
+            st.write("IPCコード生成ボタンが押されました！入力内容:", user_input)
+        else:
+            st.warning("技術内容を入力してください。")
 
 # --------------------------------------------
 # 10. フッターや追加情報（必要に応じて）
@@ -181,26 +186,7 @@ col1, col2 = st.columns([2, 3])
 col1.metric(label="メトリック1", value=123)
 col2.metric(label="メトリック2", value=456)
 
-col1, col2 = st.columns([5, 3])
-with col1:
-    st.metric(label="メトリック1", value=123)
-    st.caption("これはメトリック1に関する追加の情報です。")
-with col2:
-    st.metric(label="メトリック2", value=456)
-    st.caption("これはメトリック2に関する追加の情報です。")
 
 with st.expander("クリックして展開"):
     st.write("非表示のコンテンツ")
 
-# Part 3. Streamlitレイアウトのプリミティブの探索
-with st.container():
-    st.write("これは外側のコンテナです。")
-    with st.container():
-        st.write("これは内側のコンテナです。")
-
-# Part 6: Streamlitレイアウトプリミティブの探索
-# st.containerの使用例
-with st.container():
-    st.write('これはコンテナです。')
-    with st.container():
-        st.write('これはネストされたコンテナです。')
