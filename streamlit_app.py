@@ -143,20 +143,19 @@ for msg in st.session_state.messages:
 # --------------------------------------------
 user_input = st.text_input("調査したい技術領域やキーワードを入力してください…")
 
-col1, col2 = st.columns(2)
-with col1:
-    if st.button("関連技術提案"):
-        if user_input:
-            generate_ipc = False
-            suggest_technologies(user_input)
-        else:
-            st.warning("まずは入力欄に技術領域やキーワードを入力してください。")
-with col2:
-    if st.button("IPCコード生成"):
-        if user_input:
-            generate_ipc_codes(user_input)
-        else:
-            st.warning("まずは入力欄に技術領域やキーワードを入力してください。")
+
+if st.button("関連技術提案"):
+    if user_input:
+        generate_ipc = False
+        suggest_technologies(user_input)
+    else:
+        st.warning("まずは入力欄に技術領域やキーワードを入力してください。")
+
+if st.button("IPCコード生成"):
+    if user_input:
+        generate_ipc_codes(user_input)
+    else:
+        st.warning("まずは入力欄に技術領域やキーワードを入力してください。")
 
 # --------------------------------------------
 # 10. フッターや追加情報（必要に応じて）
