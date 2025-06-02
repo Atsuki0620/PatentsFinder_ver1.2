@@ -132,8 +132,6 @@ def generate_ipc_codes(user_input: str):
     with st.chat_message("assistant"):
         st.markdown(ai_content)
 
-    # 再実行して会話UIを更新
-    st.experimental_rerun()
 
 # --------------------------------------------
 # 8. 会話履歴を画面に表示
