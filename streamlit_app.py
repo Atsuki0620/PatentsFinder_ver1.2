@@ -154,11 +154,7 @@ if st.button("関連技術提案"):
 st.write("IPCコードを生成したい技術内容を入力してください。")
 col1, col2 = st.columns([9, 2]) # ページを比率で2つの列に分割します
 with col1:
-    user_input = st.text_area(
-        "ここに技術内容を入力してください…", # テキストボックスのラベル
-        height=150, # 表示されるテキストボックスの高さ（ピクセル）
-        placeholder="例: 自動運転におけるAIを用いた歩行者認識技術、データセンター向け次世代冷却システム、再生可能エネルギー貯蔵のための革新的なバッテリー技術"
-    )
+    user_input = st.text_area(,height=150, placeholder="ここに技術内容を入力してください")
 
 with col2:
     if st.button("コード生成"):
