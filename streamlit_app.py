@@ -152,7 +152,7 @@ if st.button("関連技術提案"):
 
 
 st.write("IPCコードを生成したい技術内容を入力してください。")
-user_input = st.text_area("",height=150, placeholder="ここに技術内容を入力してください")
+user_input = st.text_area("ここに技術内容を入力してください",height=150, placeholder="ここに技術内容を入力してください")
 if st.button("コード生成"):
     if user_input:
         generated_codes = generate_ipc_codes(user_input)
