@@ -145,8 +145,7 @@ def finalize_search_parameters(user_input: str):
     # ④：画面表示用メッセージ
     final_message = (
         "以下が最終的な検索条件です。\n"
-        f"```json\n{json_result}\n```"
-        "以上が特許検索条件になります。このまま検索エンジンに貼り付けて調査を開始してください。"
+        f"```json\n{json_result}"
     )
     st.session_state.messages.append({"role": "assistant", "content": final_message})
     with st.chat_message("assistant"):
