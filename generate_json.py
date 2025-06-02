@@ -37,7 +37,7 @@ if mode == "方針１：ボタン＋フラグ":
             st.session_state.ipc_candidates = ipc_list
             st.write(f"提案された IPC 候補: {ipc_list}")
             st.session_state.step1_done = True
-            st.experimental_rerun()
+            
     else:
         # ステップ2：countries/assignees/publication_from をまとめて入力
         cols = st.columns(3)
