@@ -109,6 +109,7 @@ def generate_ipc_codes(user_input: str):
     絶対に余計な説明文を含まず、**純粋な JSON オブジェクト**だけを返してください：
     {
       "ipc_codes": ["B01D61/02", "B01D61/08", "C02F1/44"],
+      "countries": [],
       "assignees": [],
       "publication_from": "YYYY-MM-DD"
     }
