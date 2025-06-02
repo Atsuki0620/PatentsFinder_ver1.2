@@ -143,7 +143,6 @@ for msg in st.session_state.messages:
 # --------------------------------------------
 user_input = st.text_input("調査したい技術領域やキーワードを入力してください…")
 
-
 if st.button("関連技術提案"):
     if user_input:
         generate_ipc = False
@@ -162,3 +161,33 @@ if st.button("IPCコード生成"):
 # --------------------------------------------
 st.write("---")
 st.write("※「関連技術提案」と「IPCコード生成」はそれぞれ別の処理を行います。")
+
+
+おまけのテスト
+# サイドバーの使用例
+option = st.sidebar.selectbox('オプションを選択', ['オプション1', 'オプション2', 'オプション3'])
+st.write(f'選択したオプションは {option} です。')
+
+# カラムの使用例
+column1, column2, column3 = st.columns(3)
+with column1:
+    st.write('これはカラム1です。')
+with column2:
+    st.write('これはカラム2です。')
+with column3:
+    st.write('これはカラム3です。')
+
+col1, col2 = st.columns([2, 3])
+col1.metric(label="メトリック1", value=123)
+col2.metric(label="メトリック2", value=456)
+
+col1、col2 = st.columns([2、3])
+with col1:
+    st.metric(label="メトリック1"、value=123)
+    st.caption("これはメトリック1に関する追加の情報です。")
+with col2:
+    st.metric(label="メトリック2"、value=456)
+    st.caption("これはメトリック2に関する追加の情報です。")
+
+with st.expander("クリックして展開"):
+    st.write("非表示のコンテンツ")
