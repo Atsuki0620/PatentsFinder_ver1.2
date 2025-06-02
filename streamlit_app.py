@@ -191,3 +191,16 @@ with col2:
 
 with st.expander("クリックして展開"):
     st.write("非表示のコンテンツ")
+
+# Part 3. Streamlitレイアウトのプリミティブの探索
+with st.container():
+    st.write("これは外側のコンテナです。")
+    with st.container():
+        st.write("これは内側のコンテナです。")
+
+# Part 6: Streamlitレイアウトプリミティブの探索
+# st.containerの使用例
+with st.container():
+    st.write('これはコンテナです。')
+    with st.container():
+        st.write('これはネストされたコンテナです。')
