@@ -153,9 +153,9 @@ if st.button("関連技術提案"):
 
 # ページを9:1の比率で2つの列に分割
 col1, col2 = st.columns([9, 1])
-with col1:user_input = st.text_input("IPCコードを生成したい技術内容を入力してください…")
+with col1:user_input = st.text_input("IPCコードを生成したい技術内容を入力してください")
 with col2:
-    if st.button("IPCコード生成"):
+    if st.button("コード生成"):
         if user_input:
             generate_ipc_codes(user_input)
             st.write("IPCコード生成ボタンが押されました！入力内容:", user_input)
