@@ -1,6 +1,6 @@
+import streamlit as st
 
 st.set_page_config(page_title="PatentsFinder マルチ方針テスト", layout="wide")
-
 
 # サイドバーでモード選択
 mode = st.sidebar.radio("実行方針を選択してください", 
