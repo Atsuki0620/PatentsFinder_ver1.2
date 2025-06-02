@@ -152,17 +152,13 @@ if st.button("関連技術提案"):
 
 
 st.write("IPCコードを生成したい技術内容を入力してください。")
-col1, col2 = st.columns([9, 2]) # ページを比率で2つの列に分割します
-with col1:
-    user_input = st.text_area("",height=150, placeholder="ここに技術内容を入力してください")
-
-with col2:
-    if st.button("コード生成"):
-        if user_input:
-            generated_codes = generate_ipc_codes(user_input)
-            st.success(f"IPCコードが生成されました！\n\n{generated_codes}")
-        else:
-              st.warning("技術内容を入力してください。")
+user_input = st.text_area("",height=150, placeholder="ここに技術内容を入力してください")
+if st.button("コード生成"):
+    if user_input:
+        generated_codes = generate_ipc_codes(user_input)
+        st.success(f"IPCコードが生成されました！\n\n{generated_codes}")
+    else:
+          st.warning("技術内容を入力してください。")
 
 # --------------------------------------------
 # 10. フッターや追加情報（必要に応じて）
