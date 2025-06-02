@@ -85,8 +85,6 @@ def suggest_technologies(user_input: str):
     with st.chat_message("assistant"):
         st.markdown(ai_content)
 
-    # 再実行して会話UIを更新
-    st.experimental_rerun()
 
 # --------------------------------------------
 # 7. (関数定義) IPCコードを生成する関数
