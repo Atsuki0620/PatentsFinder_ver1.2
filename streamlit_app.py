@@ -181,7 +181,7 @@ col1, col2 = st.columns([2, 3])
 col1.metric(label="メトリック1", value=123)
 col2.metric(label="メトリック2", value=456)
 
-col1, col2 = st.columns([2, 3])
+col1, col2 = st.columns([5, 3])
 with col1:
     st.metric(label="メトリック1", value=123)
     st.caption("これはメトリック1に関する追加の情報です。")
