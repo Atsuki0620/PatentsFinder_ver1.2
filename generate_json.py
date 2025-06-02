@@ -32,7 +32,7 @@ if not openai_api_key:
 # 4. LangChain の LLM インスタンス生成
 # --------------------------------------------
 llm = ChatOpenAI(
-    model_name="gpt-3.5-turbo",
+    model_name="gpt-4.1",
     openai_api_key=openai_api_key,
     temperature=0.2
 )
