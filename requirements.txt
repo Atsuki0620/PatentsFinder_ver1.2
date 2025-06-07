@@ -8,3 +8,4 @@ google-cloud-bigquery
 scikit-learn
 google-auth
 google-auth-oauthlib
+db_dtypes
